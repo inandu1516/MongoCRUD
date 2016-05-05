@@ -49,7 +49,6 @@ Retorna totes els noms marcas que tenen el numero 42 i está en stock
 Conta nombre productes a inventari
     - db.runCommand({count:'productes'})
 
-{ ratings: { $elemMatch: { $gt: 5, $lt: 9 } } } )
 
 UPDATES
 ------------
