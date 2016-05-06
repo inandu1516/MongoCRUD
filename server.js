@@ -31,19 +31,27 @@ db.once('open', function() {
     var form2 = new Form({name: "Form 2"});
 
     /** insert date */
-    form1.save();
-    form2.save();
+    // form1.save();
+    // form2.save();
 
     /**
      * Asynchronous operation, program doesn't stop,
      * it waits for the callback with the data asked for.
      * When data comes, it displays the callback function passed.
      */
-    Form.find(receiveData);
-
-    function receiveData(err, data) {
+    Form.find(function receiveData(err, data) {
         console.log(err);       //displays null if no error
         console.log(data);     //displays the array collection
-    }
+    });
+
+    Form.findById("572c7394202dce0c1c193ae2", function (err, data) {
+        console.log("\nActual data:\n" + data);
+
+        //Update field and save changes
+        data.name = "123";
+        data.save();
+
+        console.log("\nUpdated data:\n" + data);
+    });
 
 });
