@@ -8,6 +8,7 @@ MONGO
 ------------
 -show dbs
 -use <db>
+-db.DbName.dropDatabase()
 -show collections
 -db.createCollection("nom")
 -db.NomColeccio.drop()
@@ -42,12 +43,14 @@ Retorna fabricants amb companyia amb seu a SWI:
 Retorna nom marca amb mides [41,42 i 43]
     - db.productes.find( {mides:[41,42,43]}, {marca:1, mides:1, _id:0} )
 
-Retorna totes els noms marcas que tenen el numero 42 i está en stock
+Retorna totes els noms marcas que tenen el numero 42 i está en stock:
     - db.productes.find( {mides:42, stock:true}, {marca:1, _id:0} )
 
-Conta nombre productes a inventari
+Conta nombre productes a inventari:
     - db.inventari.count()
 
+Select by ID:
+    - db.persones.find({_id: ObjectId("572b7d8959f5365e14044179")}).pretty()
 
 UPDATES
 ------------
