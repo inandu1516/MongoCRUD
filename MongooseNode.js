@@ -3,6 +3,7 @@
  * \MongoCRUD> :
  *  npm install mongoose
  *  node server.js
+ *  (No need for Express to use Mongoose, only Node!)
  */
 
 var mongoose = require('mongoose');
