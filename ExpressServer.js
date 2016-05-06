@@ -9,6 +9,10 @@
 //Express
 var express = require('express');
 var app = express();
+// Serve static content for the app from the “public” directory in the application directory:
+// GET /public
+app.use(express.static(__dirname + '/public'));
+
 
 //Mongoose
 var mongoose = require('mongoose');
@@ -33,6 +37,29 @@ app.get('/', function (req, res) {
 app.get('/find', function (req, res) {
     Form.find(function (err, data) {
         res.json(data);
+    });
+});
+
+
+/**
+ * Because it is asynchronous, the remove command is sended to the server but it doesn't wait
+ * the server to come back, (not block). So by the time we send the remaining data, maybe te remove
+ * action have not yet been done. So te be sure to call them wen we have removed, we have to place
+ * the Form.find inside the callback function of the Form.remove.
+ */
+app.delete('/form/:id', function (req, res) {
+    Form.find(function (err, data) {
+        //remove the element with the matched id, if success -> callback function
+        Form.remove({_id: req.params.id}, function (err, count) {
+            console.log(err);
+            console.log(count);
+
+            // //then sends back the remaining elements
+            Form.find(function (err, data) {
+                res.json(data);
+            });
+
+        });
     });
 });
 

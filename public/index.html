@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--AngularJS-->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+<body>
+<div ng-app="FormApp">
+    <div class="container" ng-controller="FormController">
+        <table class="table table-striped">
+            <tbody>
+                <tr ng-repeat="form in forms">
+                    <td>{{form.name}}</td>
+                    <td>{{form.created | date}}</td>    <!--date filter-->
+                    <td>
+                        <button ng-click="remove(form._id)" class="btn btn-danger pull-right">
+                            &times;
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "name": "mongocrud",
+  "version": "1.0.0",
+  "description": "Mongoose + Express sample",
+  "main": "ExpressServer.js",
+  "scripts": {
+    "test": "ok"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inandu1516/MongoCRUD.git"
+  },
+  "author": "Inge Daw-2",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/inandu1516/MongoCRUD/issues"
+  },
+  "homepage": "https://github.com/inandu1516/MongoCRUD#readme",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
