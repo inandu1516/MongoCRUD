@@ -1,9 +1,12 @@
 /**
  * Created by Inge on 06/05/2016.
+ * C:\Program Files\MongoDB\Server\3.2\bin>dir
+ * mongod
  * \MongoCRUD> :
  * npm init
  * npm install express --save
  * node ExpressServer.js
+ * https://www.youtube.com/watch?v=c-etW7AX9cA
  */
 
 //Express
@@ -26,6 +29,8 @@ db.once('open', function() {
         name: String,
         created: {type: Date, default: Date.now}
     }, {collection:"form"});
+
+    //modelName, schema
     Form = mongoose.model("Form", FormSchema);
 });
 

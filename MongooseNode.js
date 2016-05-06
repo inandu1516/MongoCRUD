@@ -30,10 +30,14 @@ db.once('open', function() {
 
     var form1 = new Form({name: "Form 1"});
     var form2 = new Form({name: "Form 2"});
+    var form3 = new Form({name: "Form 3"});
+    var form4 = new Form({name: "Form 4"});
 
     /** insert date */
-    // form1.save();
-    // form2.save();
+    form1.save();
+    form2.save();
+    form3.save();
+    form4.save();
 
     /**
      * Asynchronous operation, program doesn't stop,
@@ -45,14 +49,14 @@ db.once('open', function() {
         console.log(data);     //displays the array collection
     });
 
-    Form.findById("572c7394202dce0c1c193ae2", function (err, data) {
-        console.log("\nActual data:\n" + data);
-
-        //Update field and save changes
-        data.name = "123";
-        data.save();
-
-        console.log("\nUpdated data:\n" + data);
-    });
+    // Form.findById("572c7394202dce0c1c193ae2", function (err, data) {
+    //     console.log("\nActual data:\n" + data);
+    //
+    //     //Update field and save changes
+    //     data.name = "123";
+    //     data.save();
+    //
+    //     console.log("\nUpdated data:\n" + data);
+    // });
 
 });
