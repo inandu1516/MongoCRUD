@@ -1,3 +1,5 @@
+/**
+
 C:> node
 C:\data>db
 C:\Program Files\MongoDB\Server\3.2\bin
@@ -55,3 +57,5 @@ Select by ID:
 UPDATES
 ------------
 db.productes.update( {"marca":"QuickSilver"}, { $set : {"marca":"Zero"} } )
+
+ */
