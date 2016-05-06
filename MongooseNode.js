@@ -2,7 +2,7 @@
  * Created by Inge on 06/05/2016.
  * \MongoCRUD> :
  *  npm install mongoose
- *  node server.js
+ *  node MongooseNode.js
  *  (No need for Express to use Mongoose, only Node!)
  */
 
