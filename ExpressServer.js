@@ -28,14 +28,18 @@ db.once('open', function() {
 //Routing
 app.get('/', function (req, res) {
     res.send("hello world");
-    console.log("Connected.....port 3000");
 });
 
 app.get('/find', function (req, res) {
-    res.send("finding data...");
-    console.log("directing to .../find");
-    Form.findById("572c7394202dce0c1c193ae2", function (err, data) {
-        console.log("\nData finded:\n" + data);
+    Form.find(function (err, data) {
+        res.json(data);
+    });
+});
+
+//http://localhost:3000/find/572c7394202dce0c1c193ae2
+app.get('/find/:id', function (req, res) {
+    Form.findById(req.params.id, function (err, data) {
+        res.json(data);
     });
 });
 
